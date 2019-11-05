@@ -46,15 +46,40 @@ public class NoticeController extends HttpServlet {
 //		response.sendRedirect("noticeList.jsp");
 		
 		String url = request.getServletPath();
-		String[] page = url.split("/");
-		String[] page2 = page[page.length-1].split(".notice");
-		String path = page2[0];
+		//String[] page = url.split("/");
+		//String[] page2 = page[page.length-1].split(".notice");
+		//String path = page2[0];
 		
-		System.out.println(path);
+//		System.out.println(path);
+		
+//		url = page[2].substring(0, page[2].lastIndexOf("."));
+//		System.out.println(url);
 		
 		
-
-
+		url = url.substring(url.lastIndexOf("/")+1, url.lastIndexOf("."));
+		System.out.println("-----섭스트링-----");
+		System.out.println("url\t:"+url);
+		
+		String uri = request.getRequestURI();
+		StringBuffer rUrl = request.getRequestURL();
+		System.out.println("-----리퀘스트.겟-----");
+		System.out.println("uri\t: " + uri);
+		System.out.println("rUrl\t: "+ rUrl.toString());
+		
+		String path ="";
+		boolean flag = false;
+		
+		
+		
+		
+		if (flag) {
+			RequestDispatcher view = request.getRequestDispatcher(path);
+			view.forward(request, response);			
+		}else {
+			response.sendRedirect(path);
+		}
+		
+		
 	}
 
 	/**

@@ -9,7 +9,7 @@
 <body>
 	<h1>index</h1>
 	<a href="./notice/noticeList.notice">go notice</a>
-	<a href="notice/noticeSelect.notice">go notice select</a>
+	<a href="notice/noticeSelect.notice?check=1">go notice select</a>
 	<a href="member/memberList.do">go member</a>
 	<!-- MemberController -->
 </body>
